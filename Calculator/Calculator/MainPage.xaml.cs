@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -25,6 +26,33 @@ namespace Calculator
         public MainPage()
         {
             this.InitializeComponent();
+        }
+        public bool AbleToAddop;
+        public string InputText = "0";
+        public string OutputText = "0";
+        public bool Operator;
+
+        
+        private void Button_Click_Num(object sender, RoutedEventArgs e)
+        {
+            Button tempBTN = (Button)sender;
+            if (OutputText != "Error!")
+            {
+                if (InputBox.Text == "0")
+                {
+                    InputText = tempBTN.Content.ToString();
+                }
+                else
+                {
+                    InputText += tempBTN.Content.ToString();
+                }
+                InputBox.Text = InputText;
+            }
+            else
+            {
+                OutputBox.Text = "Please Clear it.";
+            }
+            AbleToAddop = true;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -31,8 +32,46 @@ namespace Calculator
         public string InputText = "0";
         public string OutputText = "0";
         public bool Operator;
+        public bool Point = true;
 
-        
+        private string Get_Result(string Operations)
+        {
+            System.Data.DataTable table = new DataTable(Operations);
+            nums += 1;
+            string numss = nums.ToString();
+            return numss;
+        }
+
+        //private void Button_Click_Operator(object sender,RoutedEventArgs e)
+        //{
+        //    Button tempBTN = (Button)sender;
+        //    if (AbleToAddop)
+        //    {
+
+        //    }
+        //}
+        private void Button_Click_Point(object sender, RoutedEventArgs e)
+        {
+            if (OutputText != "Error")
+            {
+                if (Point)
+                {
+                    if (InputText != "")
+                    {
+                        InputText += ".";
+                    }
+                    else
+                    {
+                        InputText = "0.";
+                    }
+                    Point = false;
+                }
+                InputBox.Text = InputText;
+            }
+            OutputBox.Text = Get_Result(OutputBox.Text);
+            AbleToAddop = true;
+        }
+
         private void Button_Click_Num(object sender, RoutedEventArgs e)
         {
             Button tempBTN = (Button)sender;
@@ -52,6 +91,7 @@ namespace Calculator
             {
                 OutputBox.Text = "Please Clear it.";
             }
+            OutputBox.Text = Get_Result(OutputBox.Text);
             AbleToAddop = true;
         }
     }

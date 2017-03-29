@@ -172,7 +172,8 @@
                                Content="."
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
-                               FontSize="24"/>
+                               FontSize="24"
+                               Click = "Button_Click_Point"/>
                     <Button Grid.Row="3" 
                                Grid.Column="3" 
                                VerticalAlignment="Stretch" 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Windows.Input;
+using System;
 using System.Data;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -80,34 +81,31 @@ namespace Calculator
 
         }
 
-        private void Button_Click_Operator(object sender, RoutedEventArgs e)
+        private void Button_Click_Operator(object sender, RoutedEventArgs e, string n)
         {
-            Button tempBTN = (Button)sender;
             if (OutputText != "Error!")
             {
                 if (AbleToAddop)
                 {
-
                     InputText = InputText.TrimEnd('.');
-                    InputText += tempBTN.Content.ToString();
+                    InputText += n;
                 }
                 InputBox.Text = InputText;
             }
             AbleToAddop = false;
         }
 
-        private void Button_Click_Num(object sender, RoutedEventArgs e)
+        private void Button_Click_Num(object sender, RoutedEventArgs e, string n)
         {
-            Button tempBTN = (Button)sender;
             if (OutputText != "Error!")
             {
                 if (InputBox.Text == "0")
                 {
-                    InputText = tempBTN.Content.ToString();
+                    InputText = n;
                 }
                 else
                 {
-                    InputText += tempBTN.Content.ToString();
+                    InputText += n;
                 }
                 InputBox.Text = InputText;
                 preNum = true;
@@ -142,14 +140,19 @@ namespace Calculator
             }
             InputBox.Text = InputText;
         }
-
+        private void Pivot_KeyUp(object sender, KeyRoutedEventArgs e)//监测是否松开Shift键
+        {
+            if (e.Key == Windows.System.VirtualKey.LeftShift) isShiftKeyPressed = false;
+        }
         private void Pivot_KeyDown(object sender, KeyRoutedEventArgs e)
         {
-            if (e.Key == VirtualKey.Number1 || e.Key == VirtualKey.NumberPad1)
-                Button_Click_1(sender, e);
-            if (e.Key == VirtualKey.Shift) isShiftKeyPressed = true;//判断是否按下Shift键
-            else if (isShiftKeyPressed == false)
+            if (e.Key == VirtualKey.LeftShift) isShiftKeyPressed = true;//判断是否按下Shift键
+            if (isShiftKeyPressed == false)
             {
+                if (e.Key == VirtualKey.Back)
+                {
+                    Button_Click_Delete(sender, e);
+                }
                 if (e.Key == VirtualKey.Number1 || e.Key == VirtualKey.NumberPad1)
                     Button_Click_1(sender, e);
                 if (e.Key == VirtualKey.Number2 || e.Key == VirtualKey.NumberPad2)
@@ -191,60 +194,74 @@ namespace Calculator
         }
         private void Button_Click_0(object sender, RoutedEventArgs e)
         {
-            Button_Click_Num(sender, e);
+            string n = "0";
+            Button_Click_Num(sender, e, n);
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Button_Click_Num(sender, e);
+            string n = "1";
+            Button_Click_Num(sender, e, n);
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Button_Click_Num(sender, e);
+            string n = "2";
+            Button_Click_Num(sender, e, n);
         }
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            Button_Click_Num(sender, e);
+            string n = "3";
+            Button_Click_Num(sender, e, n);
         }
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Button_Click_Num(sender, e);
+            string n = "4";
+            Button_Click_Num(sender, e, n);
         }
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            Button_Click_Num(sender, e);
+            string n = "5";
+            Button_Click_Num(sender, e, n);
         }
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-            Button_Click_Num(sender, e);
+            string n = "6";
+            Button_Click_Num(sender, e, n);
         }
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            Button_Click_Num(sender, e);
+            string n = "7";
+            Button_Click_Num(sender, e, n);
         }
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
-            Button_Click_Num(sender, e);
+            string n = "8";
+            Button_Click_Num(sender, e, n);
         }
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
-            Button_Click_Num(sender, e);
+            string n = "9";
+            Button_Click_Num(sender, e, n);
         }
 
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
-            Button_Click_Operator(sender, e);
+            string n = "+";
+            Button_Click_Operator(sender, e, n);
         }
         private void Button_Click_Divide(object sender, RoutedEventArgs e)
         {
-            Button_Click_Operator(sender, e);
+            string n = "/";
+            Button_Click_Operator(sender, e, n);
         }
         private void Button_Click_Subtract(object sender, RoutedEventArgs e)
         {
-            Button_Click_Operator(sender, e);
+            string n = "-";
+            Button_Click_Operator(sender, e, n);
         }
         private void Button_Click_Multiply(object sender, RoutedEventArgs e)
         {
-            Button_Click_Operator(sender, e);
+            string n = "*";
+            Button_Click_Operator(sender, e, n);
         }
     }
 }

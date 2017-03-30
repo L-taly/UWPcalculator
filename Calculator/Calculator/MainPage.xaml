@@ -6,44 +6,45 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <PivotItem >
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.5*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="5*"/>
-            </Grid.RowDefinitions>
+    <Pivot KeyDown="Pivot_KeyDown">
+        <PivotItem>
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="45"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Viewbox>
-                    <AppBarButton HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Height="45"/>
-                </Viewbox>
-                <TextBlock Name="OutputBox" Grid.Column="1" TextAlignment="Right" FontFamily="Microsoft YaHei UI" FontSize=" 19" TextWrapping="Wrap" FontWeight="Bold" Text="0"/>
-            </Grid>
-            <TextBlock Name="InputBox" Grid.Row="1" TextAlignment="Right"  FontFamily="Microsoft YaHei UI" FontSize="38" TextWrapping="Wrap" FontWeight="Bold" Text="0"/>
-            <Grid Grid.Row="2">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="12"/>
+                    <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
-                <Grid Background="#C2C2C2">
+                <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="45"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
+                    <Viewbox>
+                        <AppBarButton HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Height="45"/>
+                    </Viewbox>
+                    <TextBlock Name="OutputBox" Grid.Column="1" TextAlignment="Right" FontFamily="Microsoft YaHei UI" FontSize=" 19" TextWrapping="Wrap" FontWeight="Bold" Text="0"/>
+                </Grid>
+                <TextBlock Name="InputBox" Grid.Row="1" TextAlignment="Right"  FontFamily="Microsoft YaHei UI" FontSize="38" TextWrapping="Wrap" FontWeight="Bold" Text="0"/>
+                <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="100*"/>
-                        <RowDefinition Height="100*"/>
-                        <RowDefinition Height="100*"/>
-                        <RowDefinition Height="100*"/>
-                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="12"/>
                     </Grid.RowDefinitions>
-                    <Button Grid.Row="0" 
+                    <Grid Background="#C2C2C2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100*"/>
+                            <RowDefinition Height="100*"/>
+                            <RowDefinition Height="100*"/>
+                            <RowDefinition Height="100*"/>
+                            <RowDefinition Height="5*"/>
+                        </Grid.RowDefinitions>
+                        <Button  Grid.Row="0" 
                                Grid.Column="0" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -51,10 +52,10 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                               Click="Button_Click_Num"
+                               Click="Button_Click_7"
                                ToolTipService.ToolTip="1"
                                AutomationProperties.AcceleratorKey="1"/>
-                    <Button Grid.Row="0" 
+                        <Button Grid.Row="0" 
                                Grid.Column="1" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -62,8 +63,8 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                                Click="Button_Click_Num"/>
-                    <Button Grid.Row="0" 
+                                Click="Button_Click_8"/>
+                        <Button Grid.Row="0" 
                                Grid.Column="2" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -71,8 +72,8 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                                Click="Button_Click_Num"/>
-                    <Button Grid.Row="0" 
+                                Click="Button_Click_9"/>
+                        <Button Grid.Row="0" 
                                Grid.Column="4" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -80,8 +81,8 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                               Click="Button_Click_Operator"/>
-                    <Button Grid.Row="1" 
+                               Click="Button_Click_Add"/>
+                        <Button Grid.Row="1" 
                                Grid.Column="0" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -89,8 +90,8 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                               Click="Button_Click_Num"/>
-                    <Button Grid.Row="1" 
+                               Click="Button_Click_4"/>
+                        <Button Grid.Row="1" 
                                Grid.Column="1" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -98,8 +99,8 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                               Click="Button_Click_Num"/>
-                    <Button Grid.Row="1" 
+                               Click="Button_Click_5"/>
+                        <Button Grid.Row="1" 
                                Grid.Column="2" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -107,8 +108,8 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                               Click="Button_Click_Num"/>
-                    <Button Grid.Row="1" 
+                               Click="Button_Click_6"/>
+                        <Button Grid.Row="1" 
                                Grid.Column="3" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -116,8 +117,8 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                               Click="Button_Click_Operator"/>
-                    <Button Grid.Row="2" 
+                               Click="Button_Click_Subtract"/>
+                        <Button Grid.Row="2" 
                                Grid.Column="0" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -125,8 +126,8 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                               Click="Button_Click_Num"/>
-                    <Button Grid.Row="2" 
+                               Click="Button_Click_1"/>
+                        <Button Grid.Row="2" 
                                Grid.Column="1" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -134,8 +135,8 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                               Click="Button_Click_Num"/>
-                    <Button Grid.Row="2" 
+                               Click="Button_Click_2"/>
+                        <Button Grid.Row="2" 
                                Grid.Column="2" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -143,8 +144,8 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                               Click="Button_Click_Num"/>
-                    <Button Grid.Row="2" 
+                               Click="Button_Click_3"/>
+                        <Button Grid.Row="2" 
                                Grid.Column="3" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -152,8 +153,8 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                               Click="Button_Click_Operator"/>
-                    <Button Grid.Row="3" 
+                               Click="Button_Click_Multiply"/>
+                        <Button Grid.Row="3" 
                                Grid.Column="0" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -162,7 +163,7 @@
                                FontWeight="Bold" 
                                FontSize="24"
                                Click="Button_Click_Delete"/>
-                    <Button Grid.Row="3" 
+                        <Button Grid.Row="3" 
                                Grid.Column="1" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -170,8 +171,8 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                               Click="Button_Click_Num"/>
-                    <Button Grid.Row="3" 
+                               Click="Button_Click_0"/>
+                        <Button Grid.Row="3" 
                                Grid.Column="2" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -180,7 +181,7 @@
                                FontWeight="Bold" 
                                FontSize="24"
                                Click = "Button_Click_Point"/>
-                    <Button Grid.Row="3" 
+                        <Button Grid.Row="3" 
                                Grid.Column="3" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
@@ -188,9 +189,10 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                               Click="Button_Click_Operator"/>
+                               Click="Button_Click_Divide"/>
+                    </Grid>
                 </Grid>
             </Grid>
-        </Grid>
-    </PivotItem>
+        </PivotItem>
+    </Pivot>
 </Page>

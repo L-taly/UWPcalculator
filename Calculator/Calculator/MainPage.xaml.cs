@@ -121,5 +121,24 @@ namespace Calculator
             }
             AbleToAddop = true;
         }
+
+        private void Button_Click_Delete(object sender, RoutedEventArgs e)
+        {
+            InputText = InputText.Substring(0, InputText.Length - 1);
+            if (InputText.Length == 0)
+            {
+                InputText = "0";
+                OutputBox.Text = "0";
+            }
+            else if (InputText.Length != 0 && !char.IsDigit(InputText[InputText.Length - 1]))
+            {
+                OutputBox.Text = (new BinaryTree(InputText.Substring(0, InputText.Length - 1))).GetResult().ToString();
+            }
+            else if(InputText.Length != 0 && char.IsDigit(InputText[InputText.Length - 1]))
+            {
+                OutputBox.Text = (new BinaryTree(InputText)).GetResult().ToString();
+            }
+            InputBox.Text = InputText;
+        }
     }
 }

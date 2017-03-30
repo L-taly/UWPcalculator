@@ -155,10 +155,11 @@
                                Grid.Column="0" 
                                VerticalAlignment="Stretch" 
                                HorizontalAlignment="Stretch" 
-                               Content="="
+                               Content="Delete"
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
-                               FontSize="24"/>
+                               FontSize="24"
+                               Click="Button_Click_Delete"/>
                     <Button Grid.Row="3" 
                                Grid.Column="1" 
                                VerticalAlignment="Stretch" 

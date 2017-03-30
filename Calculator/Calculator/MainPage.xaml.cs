@@ -28,6 +28,7 @@ namespace Calculator
         {
             this.InitializeComponent();
         }
+        public bool preNum = false;
         public bool AbleToAddop;
         public string InputText = "0";
         public string OutputText = "0";
@@ -36,7 +37,7 @@ namespace Calculator
 
         //private string Get_Result(string Operations)
         //{
-            
+
             
         //}
 
@@ -50,6 +51,7 @@ namespace Calculator
         //}
         private void Button_Click_Point(object sender, RoutedEventArgs e)
         {
+            int len = InputText.Length;
             if (OutputText != "Error")
             {
                 if (Point)
@@ -57,17 +59,21 @@ namespace Calculator
                     if (InputText != "")
                     {
                         InputText += ".";
+                        Point = false;
+                        AbleToAddop = true;
                     }
                     else
                     {
                         InputText = "0.";
-                    }
-                    Point = false;
+                        Point = false;
+                        AbleToAddop = true;
+                    }                    
                 }
                 InputBox.Text = InputText;
+
             }
             //OutputBox.Text = Get_Result(OutputBox.Text);
-            AbleToAddop = true;
+            
         }
 
         private void Button_Click_Operator(object sender, RoutedEventArgs e)
@@ -98,13 +104,15 @@ namespace Calculator
                     InputText += tempBTN.Content.ToString();
                 }
                 InputBox.Text = InputText;
+                preNum = true;
             }
             else
             {
                 OutputBox.Text = "Please Clear it.";
             }
+            
             //OutputBox.Text = Get_Result(OutputBox.Text);
-            if (!AbleToAddop)
+            if (preNum && !AbleToAddop)
             {
                 Point = true;
             }

@@ -30,7 +30,6 @@ namespace Calculator
     {
         public MainPage()
         {
-
             this.InitializeComponent();
         }
         public bool preNum = false;
@@ -41,21 +40,7 @@ namespace Calculator
         public bool Point = true;
         public bool isShiftKeyPressed = false;
 
-        //private string Get_Result(string Operations)
-        //{
-
-
-        //}
-
-        //private void Button_Click_Operator(object sender,RoutedEventArgs e)
-        //{
-        //    Button tempBTN = (Button)sender;
-        //    if (AbleToAddop)
-        //    {
-
-        //    }
-        //}
-        public void Button_Click_Point(object sender, RoutedEventArgs e)
+        public void Button_Click_Point(object sender, RoutedEventArgs e)//小数点处理
         {
             int len = InputText.Length;
             if (OutputText != "Error")
@@ -76,12 +61,10 @@ namespace Calculator
                     }
                 }
                 InputBox.Text = InputText;
-
             }
-
         }
 
-        private void Button_Click_Operator(object sender, RoutedEventArgs e, string n)
+        private void Button_Click_Operator(object sender, RoutedEventArgs e, string n)//处理运算符
         {
             if (OutputText != "Error!")
             {
@@ -95,7 +78,7 @@ namespace Calculator
             AbleToAddop = false;
         }
 
-        private void Button_Click_Num(object sender, RoutedEventArgs e, string n)
+        private void Button_Click_Num(object sender, RoutedEventArgs e, string n)//处理数字
         {
             if (OutputText != "Error!")
             {
@@ -122,7 +105,7 @@ namespace Calculator
             AbleToAddop = true;
         }
 
-        private void Button_Click_Delete(object sender, RoutedEventArgs e)
+        private void Button_Click_Delete(object sender, RoutedEventArgs e)//删除
         {
             InputText = InputText.Substring(0, InputText.Length - 1);
             if (InputText.Length == 0)
@@ -140,13 +123,13 @@ namespace Calculator
             }
             InputBox.Text = InputText;
         }
-        private void Pivot_KeyUp(object sender, KeyRoutedEventArgs e)//监测是否松开Shift键
+        private void Pivot_KeyUp(object sender, KeyRoutedEventArgs e)//监测是否松开Shift键....这是假的
         {
             if (e.Key == Windows.System.VirtualKey.LeftShift) isShiftKeyPressed = false;
         }
-        private void Pivot_KeyDown(object sender, KeyRoutedEventArgs e)
+        private void Pivot_KeyDown(object sender, KeyRoutedEventArgs e)//监控键盘
         {
-            if (e.Key == VirtualKey.LeftShift) isShiftKeyPressed = true;//判断是否按下Shift键
+            if (e.Key == VirtualKey.LeftShift) isShiftKeyPressed = true;//判断是否按下Shift键.....这也是假的
             if (isShiftKeyPressed == false)
             {
                 if (e.Key == VirtualKey.Back)
@@ -184,7 +167,7 @@ namespace Calculator
                 if (e.Key == VirtualKey.Decimal || (int)e.Key == 190)
                     Button_Click_Point(sender, e);
             }
-            else if (isShiftKeyPressed == true)//这个是因为UWP没有具体的VirtualKey，直接用值
+            else if (isShiftKeyPressed == true)
             {
                 if ((int)e.Key == 187)
                     Button_Click_Add(sender, e);
@@ -192,6 +175,8 @@ namespace Calculator
                     Button_Click_Multiply(sender, e);
             }
         }
+
+        //调用按钮函数
         private void Button_Click_0(object sender, RoutedEventArgs e)
         {
             string n = "0";

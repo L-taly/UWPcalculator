@@ -75,8 +75,7 @@ namespace Calculator
                 InputBox.Text = InputText;
 
             }
-            //OutputBox.Text = Get_Result(OutputBox.Text);
-            
+
         }
 
         private void Button_Click_Operator(object sender, RoutedEventArgs e)
@@ -110,13 +109,12 @@ namespace Calculator
                 }
                 InputBox.Text = InputText;
                 preNum = true;
+                OutputBox.Text = (new BinaryTree(InputBox.Text)).GetResult().ToString();
             }
             else
             {
                 OutputBox.Text = "Please Clear it.";
             }
-            
-            //OutputBox.Text = Get_Result(OutputBox.Text);
             if (preNum && !AbleToAddop)
             {
                 Point = true;

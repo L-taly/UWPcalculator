@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <PivotItem>
+    <PivotItem >
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.5*"/>
@@ -51,7 +51,9 @@
                                FontFamily="Microsoft YaHei UI" 
                                FontWeight="Bold" 
                                FontSize="24"
-                               Click="Button_Click_Num"/>
+                               Click="Button_Click_Num"
+                               ToolTipService.ToolTip="1"
+                               AutomationProperties.AcceleratorKey="1"/>
                     <Button Grid.Row="0" 
                                Grid.Column="1" 
                                VerticalAlignment="Stretch" 

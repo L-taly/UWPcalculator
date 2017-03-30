@@ -8,6 +8,7 @@ using System.Text;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -37,6 +38,7 @@ namespace Calculator
         public string OutputText = "0";
         public bool Operator;
         public bool Point = true;
+        public bool isShiftKeyPressed = false;
 
         //private string Get_Result(string Operations)
         //{
@@ -140,5 +142,27 @@ namespace Calculator
             }
             InputBox.Text = InputText;
         }
+
+        //private void PivotItem_KeyDown(object sender, KeyRoutedEventArgs e)
+        //{
+            
+        //    if(e.Key == VirtualKey.Shift)
+        //    {
+        //        isShiftKeyPressed = true;
+        //    }
+        //    else if(isShiftKeyPressed == false)
+        //    {
+        //        if (e.Key == VirtualKey.Number1)
+        //            Button_Click_Num(sender, e);
+        //    }
+        //}
+
+        //private void Button_KeyDown2(KeyRoutedEventArgs e)
+        //{
+        //    if(e.Key == VirtualKey.Number2)
+        //    {
+        //        Button_Click_Num(, e);
+        //    }
+        //}
     }
 }
